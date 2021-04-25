@@ -1,0 +1,93 @@
+2021-02-01 22:14:44.767  INFO 12745 --- [main] b.c.a.simpleapi.SimpleDataApplication    : Starting SimpleDataApplication using Java 11.0.9 on ailtonmsj-K46CM with PID 12745 (/home/ailtonmsj/work/wrkspc/SimpleData/target/classes started by ailtonmsj in /home/ailtonmsj/work/wrkspc/SimpleData)
+2021-02-01 22:14:44.772  INFO 12745 --- [main] b.c.a.simpleapi.SimpleDataApplication    : No active profile set, falling back to default profiles: default
+2021-02-01 22:14:45.744  INFO 12745 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-01 22:14:45.754  INFO 12745 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-01 22:14:45.755  INFO 12745 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-01 22:14:45.818  INFO 12745 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-01 22:14:45.819  INFO 12745 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 973 ms
+2021-02-01 22:14:46.025  INFO 12745 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-01 22:14:46.259  INFO 12745 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-02-01 22:14:46.273  INFO 12745 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-02-01 22:14:46.274  INFO 12745 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2021-02-01 22:14:46.275  INFO 12745 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-02-01 22:14:46.276  INFO 12745 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-02-01 22:14:46.276  INFO 12745 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-02-01 22:14:46.276  INFO 12745 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2021-02-01 22:14:46.276  INFO 12745 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@21263314
+2021-02-01 22:14:46.290  INFO 12745 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-01 22:14:46.342  INFO 12745 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-01 22:14:46.344  INFO 12745 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2021-02-01 22:14:46.345  INFO 12745 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-02-01 22:14:46.363  INFO 12745 --- [main] b.c.a.simpleapi.SimpleDataApplication    : Started SimpleDataApplication in 2.09 seconds (JVM running for 2.764)
+2021-02-01 22:14:46.427  INFO 12745 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-01 22:14:46.428  INFO 12745 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-01 22:14:46.429  INFO 12745 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-01 22:14:46.449  INFO 12745 --- [http-nio-8080-exec-1] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:46.449  INFO 12745 --- [http-nio-8080-exec-1] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:46 BRT 2021
+2021-02-01 22:14:46.470  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:47.359  INFO 12745 --- [http-nio-8080-exec-2] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:47.359  INFO 12745 --- [http-nio-8080-exec-2] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:47 BRT 2021
+2021-02-01 22:14:47.362  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:48.358  INFO 12745 --- [http-nio-8080-exec-3] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:48.359  INFO 12745 --- [http-nio-8080-exec-3] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:48 BRT 2021
+2021-02-01 22:14:48.362  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:49.359  INFO 12745 --- [http-nio-8080-exec-4] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:49.359  INFO 12745 --- [http-nio-8080-exec-4] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:49 BRT 2021
+2021-02-01 22:14:49.361  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:50.358  INFO 12745 --- [http-nio-8080-exec-5] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:50.359  INFO 12745 --- [http-nio-8080-exec-5] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:50 BRT 2021
+2021-02-01 22:14:50.361  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:51.359  INFO 12745 --- [http-nio-8080-exec-6] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:51.365  INFO 12745 --- [http-nio-8080-exec-6] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:51 BRT 2021
+2021-02-01 22:14:51.367  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:52.358  INFO 12745 --- [http-nio-8080-exec-7] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:52.359  INFO 12745 --- [http-nio-8080-exec-7] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:52 BRT 2021
+2021-02-01 22:14:52.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:53.358  INFO 12745 --- [http-nio-8080-exec-8] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:53.359  INFO 12745 --- [http-nio-8080-exec-8] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:53 BRT 2021
+2021-02-01 22:14:53.361  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:54.358  INFO 12745 --- [http-nio-8080-exec-9] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:54.359  INFO 12745 --- [http-nio-8080-exec-9] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:54 BRT 2021
+2021-02-01 22:14:54.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:55.358  INFO 12745 --- [http-nio-8080-exec-10] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:55.359  INFO 12745 --- [http-nio-8080-exec-10] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:55 BRT 2021
+2021-02-01 22:14:55.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:56.358  INFO 12745 --- [http-nio-8080-exec-1] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:56.358  INFO 12745 --- [http-nio-8080-exec-1] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:56 BRT 2021
+2021-02-01 22:14:56.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:57.358  INFO 12745 --- [http-nio-8080-exec-2] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:57.359  INFO 12745 --- [http-nio-8080-exec-2] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:57 BRT 2021
+2021-02-01 22:14:57.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:58.358  INFO 12745 --- [http-nio-8080-exec-3] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:58.359  INFO 12745 --- [http-nio-8080-exec-3] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:58 BRT 2021
+2021-02-01 22:14:58.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:14:59.358  INFO 12745 --- [http-nio-8080-exec-4] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:14:59.358  INFO 12745 --- [http-nio-8080-exec-4] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:14:59 BRT 2021
+2021-02-01 22:14:59.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:15:00.358  INFO 12745 --- [http-nio-8080-exec-5] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:15:00.359  INFO 12745 --- [http-nio-8080-exec-5] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:15:00 BRT 2021
+2021-02-01 22:15:00.361  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:15:01.359  INFO 12745 --- [http-nio-8080-exec-6] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:15:01.359  INFO 12745 --- [http-nio-8080-exec-6] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:15:01 BRT 2021
+2021-02-01 22:15:01.361  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:15:02.358  INFO 12745 --- [http-nio-8080-exec-7] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:15:02.359  INFO 12745 --- [http-nio-8080-exec-7] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:15:02 BRT 2021
+2021-02-01 22:15:02.360  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:15:03.358  INFO 12745 --- [http-nio-8080-exec-8] b.c.a.s.controller.DateController        : Success
+2021-02-01 22:15:03.358  INFO 12745 --- [http-nio-8080-exec-8] b.c.a.s.controller.DateController        : ailtonmsj-K46CM - Mon Feb 01 22:15:03 BRT 2021
+2021-02-01 22:15:03.359  INFO 12745 --- [scheduling-1] b.c.a.simpleapi.scheduler.SchedulerCall  : null - 200
+2021-02-01 22:15:04.269  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-02-01 22:15:04.272  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-01 22:15:04.294  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-02-01 22:15:04.294  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2021-02-01 22:15:04.295  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2021-02-01 22:15:04.295  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2021-02-01 22:15:04.295  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2021-02-01 22:15:04.296  INFO 12745 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

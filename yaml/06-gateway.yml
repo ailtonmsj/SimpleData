@@ -1,0 +1,15 @@
+kind: Gateway
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: simpledata-gateway
+  namespace: demo-circuitbreaker
+spec:
+  servers:
+    - hosts:
+        - simpledata.teste.com.br
+      port:
+        name: http
+        number: 443
+        protocol: HTTP
+  selector:
+    istio: ingressgateway

@@ -12,7 +12,6 @@
 	<artifactId>SimpleData</artifactId>
 	<version>1.0.0</version>
 	<name>SimpleData</name>
-	<description>Simple api for test</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -20,12 +19,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

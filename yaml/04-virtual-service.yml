@@ -5,22 +5,23 @@ metadata:
   namespace: demo-circuitbreaker
 spec:
   hosts:
-  - simpledata.teste.com.br
-  gateways:
-  - demo-circuitbreaker/simpledata-gateway
+  - simpledata.demo-circuitbreaker.svc.cluster.local
   http:
-    - fault:
-        delay:
-          fixedDelay: 10s
-          percentage:
-            value: 50
-      route:
-        - destination:
-            host: simpledata.demo-circuitbreaker.svc.cluster.local
-            port:
-              number: 8080
-            subset: v4
-          weight: 100
+  - fault:
+# FOR DELAY
+#      delay:
+#        fixedDelay: 5s
+#        percentage:
+#          value: 50.0
+
+# FOR ABORT
+      abort:
+        httpStatus: 500
+        percentage:
+          value: 50
+    route:
+      - destination:
+          host: simpledata.demo-circuitbreaker.svc.cluster.local
   - route:
     - destination:
         host: simpledata.demo-circuitbreaker.svc.cluster.local

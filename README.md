@@ -25,3 +25,8 @@ $ docker container run -p8080:8080 --detach --name test ailtonmsj/simpledata:v1
 ### URL to test:
 
 http://localhost:8080/
+
+
+### .yaml manisfests to consume only inside the cluster:
+
+http://simpledata.demo-circuitbreaker.svc.cluster.local/8080

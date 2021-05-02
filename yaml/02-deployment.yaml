@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - name: simpledata
-        image: ailtonmsj/simpledata:bad-version
+        image: ailtonmsj/simpledata:v4
         imagePullPolicy: Always

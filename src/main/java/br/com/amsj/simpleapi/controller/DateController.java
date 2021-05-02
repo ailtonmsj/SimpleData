@@ -1,7 +1,6 @@
 package br.com.amsj.simpleapi.controller;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -29,19 +28,14 @@ public class DateController {
 			return responseEntity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		String server = "";
-		try {
-			server = InetAddress.getLocalHost().getCanonicalHostName();
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		}
-		
-		String data = server + " - " + new Date(); 
+		Date date = new Date();
+	
+		SimpleDateFormat dt1 = new SimpleDateFormat("dd/mm/yyyy HH:MM:SS");
+		String dateString = dt1.format (date);
 		
 		log.info("Success");
 		
-		responseEntity = new ResponseEntity<String>(data, HttpStatus.OK);
+		responseEntity = new ResponseEntity<String>(dateString, HttpStatus.OK);
 		
 		return responseEntity;
 	}

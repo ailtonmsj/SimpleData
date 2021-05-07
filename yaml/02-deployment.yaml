@@ -13,9 +13,11 @@ spec:
       name: simpledata
       labels:
         app: simpledata
-        version: v4
+        version: v5
     spec:
       containers:
       - name: simpledata
-        image: ailtonmsj/simpledata:v4
+        image: ailtonmsj/simpledata:v6-delay
+        #image: ailtonmsj/simpledata:v5
+        #image: ailtonmsj/simpledata:bad-version
         imagePullPolicy: Always

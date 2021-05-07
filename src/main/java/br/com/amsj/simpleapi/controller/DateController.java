@@ -21,6 +21,15 @@ public class DateController {
 	@RequestMapping(method=RequestMethod.GET, path="/")
 	public ResponseEntity<String> getCurrentDate() {
 		
+		log.info("Init");
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+			log.error("Error on thread sleep" + e.getMessage());
+		}
+		
 		ResponseEntity<String> responseEntity = null;
 		
 		if(!HttpStatusSignal.is_health) {
@@ -30,7 +39,7 @@ public class DateController {
 		
 		Date date = new Date();
 	
-		SimpleDateFormat dt1 = new SimpleDateFormat("dd/mm/yyyy HH:MM:SS");
+		SimpleDateFormat dt1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:SS");
 		String dateString = dt1.format (date);
 		
 		log.info("Success");

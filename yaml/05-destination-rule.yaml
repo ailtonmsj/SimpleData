@@ -6,18 +6,20 @@ metadata:
 spec:
   host: simpledata.demo-circuitbreaker.svc.cluster.local
   subsets:
-  - name: v4
+  - name: v5
     labels:
-      version: v4
+      version: v5
   trafficPolicy:
     connectionPool:
-      http:
-        http1MaxPendingRequests: 1
-        maxRequestsPerConnection: 100
-      tcp:
-        maxConnections: 100
+      http: # configuracoes aplicadas somente a conexoes http
+        http1MaxPendingRequests: 1 # conexoes maximas pendentes
+        maxRequestsPerConnection: 1 # maximo de requisicoes por conexao
+      tcp: # configuracoes aplicadas tanto a conexoes http como tcp
+        maxConnections: 1 # conexoes maximas
+        connectTimeout: 1s # tempo maximo de conexao
     outlierDetection:
-      baseEjectionTime: 1m
-      consecutive5xxErrors: 1
-      interval: 10s
-      maxEjectionPercent: 100
+      consecutive5xxErrors: 3 # numero consecutivos de erros 5XX para a ejecao
+      baseEjectionTime: 1m # tempo minimo de ejecao
+      interval: 20s # intervalo entre a ejecao e a analise
+      maxEjectionPercent: 100 # max de hosts ejetados do loadbalancer
+      minHealthPercent: 0 # min de hosts saudaveis para desabilitar o outlier detection

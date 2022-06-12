@@ -1,0 +1,24 @@
+---
+# normal version - return data and time
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpledata-normal
+  namespace: demo-caller
+spec:
+  selector:
+    matchLabels:
+      app: simpledata
+  replicas: 1
+  template:
+    metadata:
+      name: simpledata
+      labels:
+        app: simpledata
+        version: normal
+    spec:
+      containers:
+      - name: simpledata
+        image: ailtonmsj/v8-controlserverstatus
+        imagePullPolicy: Always
+...

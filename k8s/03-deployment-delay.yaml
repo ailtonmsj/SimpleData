@@ -1,8 +1,10 @@
+---
+# delay version - return data and time with 2 seconds delay
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simpledata
-  namespace: demo-circuitbreaker
+  name: simpledata-delay
+  namespace: demo-caller
 spec:
   selector:
     matchLabels:
@@ -13,11 +15,10 @@ spec:
       name: simpledata
       labels:
         app: simpledata
-        version: v5
+        version: delay
     spec:
       containers:
       - name: simpledata
         image: ailtonmsj/simpledata:v6-delay
-        #image: ailtonmsj/simpledata:v5
-        #image: ailtonmsj/simpledata:bad-version
         imagePullPolicy: Always
+...

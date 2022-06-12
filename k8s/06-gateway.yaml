@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: simpledata-gateway
+  namespace: demo-caller
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http-frontend-80
+      protocol: HTTP
+    hosts:
+    - "*"
+#    tls:
+#      mode: SIMPLE # enables HTTPS on this port
+#     credentialName: grafana-cert-ingress # fetches certs from Kubernetes secret

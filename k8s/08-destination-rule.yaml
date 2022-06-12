@@ -2,13 +2,21 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: simpledata-destination-rule
-  namespace: demo-circuitbreaker
+  namespace: demo-caller
 spec:
-  host: simpledata.demo-circuitbreaker.svc.cluster.local
+  host: simpledata.demo-caller.svc.cluster.local
   subsets:
-  - name: v5
+  - name: normal
     labels:
-      version: v5
+      version: normal
+  - name: delay
+    labels:
+      version: delay
+  - name: bad
+    labels:
+      version: bad
+      
+  # CONFIGS FOR TESTSs
   trafficPolicy:
     connectionPool:
       http: # configuracoes aplicadas somente a conexoes http

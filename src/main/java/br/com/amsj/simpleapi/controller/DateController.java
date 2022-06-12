@@ -29,14 +29,15 @@ public class DateController {
 		ResponseEntity<String> responseEntity = null;
 		
 		log.info("Init");
-		log.info("errorControl.getContador() - " + errorControl.getContador());
+		//log.info("errorControl.getContador() - " + errorControl.getContador());
 		
-		if (errorControl.getContador() == 4) {
+		// DOCKER IMAGE: 7:random-error
+		//if (errorControl.getContador() == 4) {
             // Incrementar o contador ao final
-			errorControl.incrementaContador();
+			//errorControl.incrementaContador();
 		
 			
-			
+			// DOCKER IMAGE: 6:delay
 			//try {
 			//	Thread.sleep(2000);
 			//} catch (InterruptedException e) {
@@ -44,6 +45,7 @@ public class DateController {
 			//	log.error("Error on thread sleep" + e.getMessage());
 			//}
 			
+			//DOCKER IMAGE: 8:controlserverstatus
 			if(!HttpStatusSignal.is_health) {
 				log.error("HttpStatusSignal.is_health: " + HttpStatusSignal.is_health);
 				return responseEntity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -60,15 +62,12 @@ public class DateController {
 			
 			return responseEntity;
 		
-		} else {
+//		} else {
             // Se for diferente de 4 (ou seja 1, 2 e 3), então retorno algo diferente de 200
             // e incrementa o contador
-			errorControl.incrementaContador();
-            
-			
-			log.info("Error");
-			
-            return responseEntity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+			//errorControl.incrementaContador();
+//			log.info("Error");
+//            return responseEntity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+//		}
 	}
 }

@@ -1,8 +1,9 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: simpledata
-  namespace: demo-circuitbreaker
+  namespace: demo-caller
 spec:
   selector:
     app: simpledata
@@ -10,4 +11,4 @@ spec:
     - name: http
       port: 8080
   type: ClusterIP
----
+...

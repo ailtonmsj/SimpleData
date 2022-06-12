@@ -2,31 +2,53 @@
 
 ## A simple spring boot aplication to return a current date.
 
-### To build a docker image:
-$ docker build -t ROOT-NAME/IMAGE-NAME:TAG-VERSION
+<br>
+
+# Endpoints
+
+## To get de date:
+
+```
+http://<LOAD-BALANCER-DNS>:80/simpledata
+```
+
+## To control the http status response code:
+
+### To change http status from "/simple" to 500, use:
+```
+http://<LOAD-BALANCER-DNS>:80/simpledata/healthstatus?isHealth=false
+```
+
+### To change http status from "/simple" to 200, use:
+```
+http://<LOAD-BALANCER-DNS>:80/simpledata/healthstatus?isHealth=true
+```
 
 
-### To run:
-$ docker container run -p8080:8080 ROOT-NAME/IMAGE-NAME:TAG-VERSION
+# To build a docker image:
 
+## Single arch
+```
+mvn clean install
+docker build -t <DOCKERHUB-USERNAME>/simpledata:<TAG-NAME>
+```
+
+## Build in multiarch (Linux arm64 AND amd64):
+```
+docker buildx build -t <DOCKERHUB-USERNAME>/simpledata:<TAG-NAME> --platform linux/arm64/v8,linux/amd64 --push .
+```
+
+
+# To run as Docker:
+```
+docker container run -p8080:8080 <DOCKERHUB-USERNAME>/simpledata:<TAG-NAME>
+```
 Eg:
+```
+docker container run -p8080:8080 ailtonmsj/simpledata:v1
+```
 
-$ docker container run -p8080:8080 ailtonmsj/simpledata:v1
-
-
-### To run (detached):
-$ docker container run -p8080:8080 --detach --name test ROOT-NAME/IMAGE-NAME:TAG-VERSION
-
-Eg:
-
-$ docker container run -p8080:8080 --detach --name test ailtonmsj/simpledata:v1
-
-
-### URL to test:
-
-http://localhost:8080/
-
-
-### .yaml manisfests to consume only inside the cluster:
-
-http://simpledata.demo-circuitbreaker.svc.cluster.local/8080
+# To Deploy as Kubernetes
+```
+kubectl apply -f ./k8s/
+```

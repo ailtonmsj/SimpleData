@@ -1,0 +1,59 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: simpledata-vs
+  namespace: demo-caller
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - demo-caller/simpledata-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /simpledata
+    rewrite:
+      uri: /
+    route:
+    # normal backend
+    - destination:
+        host: simpledata.demo-caller.svc.cluster.local
+        port:
+          number: 8080
+        subset: normal
+      weight: 100
+    # delayed backend
+    - destination:
+        host: simpledata.demo-caller.svc.cluster.local
+        port:
+          number: 8080
+        subset: delay
+      weight: 0
+    # bad backend
+    - destination:
+        host: simpledata.demo-caller.svc.cluster.local
+        port:
+          number: 8080
+        subset: bad
+      weight: 0
+
+#  - fault:
+# FOR DELAY
+#      delay:
+#        fixedDelay: 5s
+#        percentage:
+#          value: 50.0
+
+# FOR ABORT
+#      abort:
+#        httpStatus: 500
+#        percentage:
+#          value: 90
+
+# ROUTE FOR FAULT
+#    route:
+#      - destination:
+#          host: simpledata.demo-caller.svc.cluster.local
+#          port:
+#            number: 8080
+#          subset: v5

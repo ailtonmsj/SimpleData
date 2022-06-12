@@ -1,0 +1,24 @@
+---
+# bad version - return data and time
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpledata-bad
+  namespace: demo-caller
+spec:
+  selector:
+    matchLabels:
+      app: simpledata
+  replicas: 1
+  template:
+    metadata:
+      name: simpledata
+      labels:
+        app: simpledata
+        version: v5
+    spec:
+      containers:
+      - name: simpledata
+        image: ailtonmsj/simpledata:bad-version
+        imagePullPolicy: Always
+...

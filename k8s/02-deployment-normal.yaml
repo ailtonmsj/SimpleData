@@ -19,6 +19,13 @@ spec:
     spec:
       containers:
       - name: simpledata
-        image: ailtonmsj/v8-controlserverstatus
+        image: ailtonmsj/simpledata:v8-controlserverstatus
         imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "300m"
+            memory: "256Mi"
+          requests:
+            cpu: "200m"
+            memory: "128Mi"
 ...

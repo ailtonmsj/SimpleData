@@ -15,10 +15,17 @@ spec:
       name: simpledata
       labels:
         app: simpledata
-        version: v5
+        version: bad
     spec:
       containers:
       - name: simpledata
         image: ailtonmsj/simpledata:bad-version
         imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "300m"
+            memory: "256Mi"
+          requests:
+            cpu: "200m"
+            memory: "128Mi"
 ...

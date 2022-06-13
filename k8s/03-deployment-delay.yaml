@@ -21,4 +21,11 @@ spec:
       - name: simpledata
         image: ailtonmsj/simpledata:v6-delay
         imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "300m"
+            memory: "256Mi"
+          requests:
+            cpu: "200m"
+            memory: "128Mi"
 ...
